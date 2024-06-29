@@ -1,6 +1,6 @@
-// src/components/LineItem.tsx
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import { toggleItem, deleteItem } from '../redux/store';
 
 interface LineItemProps {
@@ -11,6 +11,7 @@ interface LineItemProps {
 
 const LineItem: React.FC<LineItemProps> = ({ id, checked, item }) => {
     const dispatch = useDispatch();
+    const { t } = useTranslation();
 
     return (
         <li className='item'>
@@ -22,7 +23,7 @@ const LineItem: React.FC<LineItemProps> = ({ id, checked, item }) => {
             <span style={{ textDecoration: checked ? 'line-through' : 'none' }}>
                 {item}
             </span>
-            <button onClick={() => dispatch(deleteItem(id))}>Delete</button>
+            <button onClick={() => dispatch(deleteItem(id))}>{t('deleteButton')}</button>
         </li>
     );
 };

@@ -5,15 +5,16 @@ import AddItem from './components/AddItem';
 import SearchItem from './components/SearchItem';
 import ItemList from './components/ItemList';
 import Footer from './components/Footer';
+import LanguageSwitcher from './components/LanguageSwitcher';
 
 
 const App: React.FC = () => {
     return (
         <Provider store={store}>
-            <div className='App'>
-                <Header />
+            <div className='App'>   
+                <LanguageSwitcher/>
                 <AddItem />
-                <SearchItem />
+                <SearchItem />  
                 <main>
                   <ItemList />
                 </main>

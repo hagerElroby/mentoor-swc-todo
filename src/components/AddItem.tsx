@@ -2,10 +2,12 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addItem } from '../redux/store';
+import { useTranslation } from 'react-i18next';
 
 const AddItem: React.FC = () => {
     const [input, setInput] = useState('');
     const dispatch = useDispatch();
+    const { t } = useTranslation();
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -21,9 +23,9 @@ const AddItem: React.FC = () => {
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Add a new item"
+                placeholder={t('addItemPlaceholder')}
             />
-            <button type="submit">Add</button>
+            <button type="submit">{t('addButton')}</button>
         </form>
     );
 };
