@@ -11,7 +11,8 @@ import LanguageSwitcher from './components/LanguageSwitcher';
 const App: React.FC = () => {
     return (
         <Provider store={store}>
-            <div className='App'>   
+            <div className='App'> 
+                <Header/>  
                 <LanguageSwitcher/>
                 <AddItem />
                 <SearchItem />  
